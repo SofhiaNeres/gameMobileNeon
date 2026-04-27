@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="src/styles/style.css">
+<title>NEON DASH</title>
+
+</head>
+<body>
+
+<canvas id="c"></canvas>
+
+<div id="ui">
+  <div id="score-bar">
+    <div id="score-wrap">
+      <div id="score-val">0</div>
+      <div id="score-label">PONTOS</div>
+    </div>
+    <div id="hi-wrap">
+      <div id="hi-val">0</div>
+      <div id="hi-label">RECORDE</div>
+    </div>
+  </div>
+</div>
+
+<div id="pause-btn">
+  <div class="pause-bar"></div>
+  <div class="pause-bar"></div>
+</div>
+
+<div id="combo-wrap">
+  <div id="combo-val"></div>
+</div>
+
+<div id="powerup-bar">
+  <div class="pw-pill" id="shield-pill">🛡 ESCUDO</div>
+  <div class="pw-pill" id="slow-pill">⏳ LENTO</div>
+</div>
+
+<!-- START -->
+<div class="overlay" id="start-screen">
+  <div class="logo-wrap">
+    <div class="logo">NEON<br>DASH</div>
+    <div class="logo-sub">SURVIVE · COLLECT · ESCAPE</div>
+  </div>
+  <div class="instructions">
+    <div class="inst-row">
+      <div class="inst-icon">👆</div>
+      <div class="inst-text">TOQUE → PULAR</div>
+    </div>
+    <div class="inst-row">
+      <div class="inst-icon">👆👆</div>
+      <div class="inst-text">TOQUE DUPLO → PULO DUPLO</div>
+    </div>
+    <div class="inst-row">
+      <div class="inst-icon">⬆️</div>
+      <div class="inst-text">DESLIZE PARA CIMA → SUPER PULO</div>
+    </div>
+  </div>
+  <button class="tap-btn" id="start-btn">JOGAR</button>
+  <div id="start-hi"></div>
+</div>
+
+<!-- GAME OVER -->
+<div class="overlay hidden" id="gameover-screen">
+  <div class="go-label">FIM DE JOGO</div>
+  <div class="go-score" id="go-score-val">0</div>
+  <div class="go-hi" id="go-hi-val"></div>
+  <button class="tap-btn" id="restart-btn">JOGAR NOVAMENTE</button>
+</div>
+
+<!-- PAUSE -->
+<div class="overlay hidden" id="pause-screen">
+  <div class="pa-label">PAUSADO</div>
+  <button class="tap-btn" id="resume-btn">CONTINUAR</button>
+</div>
+
+<script src="src/js/script.js"></script>
+</body>
+</html>
