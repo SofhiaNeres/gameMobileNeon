@@ -2,82 +2,78 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Neon Dash</title>
 <link rel="stylesheet" href="src/styles/style.css">
-<title>NEON DASH</title>
-
 </head>
 <body>
 
 <canvas id="c"></canvas>
 
-<div id="ui">
-  <div id="score-bar">
-    <div id="score-wrap">
-      <div id="score-val">0</div>
-      <div id="score-label">PONTOS</div>
-    </div>
-    <div id="hi-wrap">
-      <div id="hi-val">0</div>
-      <div id="hi-label">RECORDE</div>
-    </div>
+<!-- HUD -->
+<div id="hud">
+  <div class="hud-box">
+    <span class="hud-label">Score</span>
+    <span class="hud-val" id="score-val">0</span>
+  </div>
+  <div class="hud-box" id="hi-box" style="text-align:right">
+    <span class="hud-label">Recorde</span>
+    <span class="hud-val" id="hi-val">0</span>
   </div>
 </div>
 
-<div id="pause-btn">
-  <div class="pause-bar"></div>
-  <div class="pause-bar"></div>
+<div id="pills">
+  <div class="pill" id="shield-pill">🛡 ESCUDO</div>
+  <div class="pill" id="slow-pill">⏳ LENTO</div>
 </div>
 
-<div id="combo-wrap">
-  <div id="combo-val"></div>
-</div>
+<div id="combo-wrap"><span id="combo-val"></span></div>
 
-<div id="powerup-bar">
-  <div class="pw-pill" id="shield-pill">🛡 ESCUDO</div>
-  <div class="pw-pill" id="slow-pill">⏳ LENTO</div>
-</div>
+<button id="pause-btn">⏸</button>
 
-<!-- START -->
-<div class="overlay" id="start-screen">
-  <div class="logo-wrap">
-    <div class="logo">NEON<br>DASH</div>
-    <div class="logo-sub">SURVIVE · COLLECT · ESCAPE</div>
-  </div>
+<!-- Start Screen -->
+<div class="screen" id="start-screen">
+  <div class="screen-title">NEON DASH</div>
+  <div class="screen-sub">Esquiva · Coleta · Sobrevive</div>
+  <div class="screen-hi" id="start-hi"></div>
+
   <div class="instructions">
-    <div class="inst-row">
+    <div class="inst-item">
       <div class="inst-icon">👆</div>
-      <div class="inst-text">TOQUE → PULAR</div>
+      <div class="inst-label">Toque<br>Pular</div>
     </div>
-    <div class="inst-row">
-      <div class="inst-icon">👆👆</div>
-      <div class="inst-text">TOQUE DUPLO → PULO DUPLO</div>
+    <div class="inst-item">
+      <div class="inst-icon">✌️</div>
+      <div class="inst-label">2× Toque<br>Pulo duplo</div>
     </div>
-    <div class="inst-row">
+    <div class="inst-item">
       <div class="inst-icon">⬆️</div>
-      <div class="inst-text">DESLIZE PARA CIMA → SUPER PULO</div>
+      <div class="inst-label">Deslize<br>Pulo alto</div>
     </div>
   </div>
-  <button class="tap-btn" id="start-btn">JOGAR</button>
-  <div id="start-hi"></div>
+
+  <button class="btn" id="start-btn">JOGAR</button>
 </div>
 
-<!-- GAME OVER -->
-<div class="overlay hidden" id="gameover-screen">
-  <div class="go-label">FIM DE JOGO</div>
-  <div class="go-score" id="go-score-val">0</div>
-  <div class="go-hi" id="go-hi-val"></div>
-  <button class="tap-btn" id="restart-btn">JOGAR NOVAMENTE</button>
+<!-- Game Over Screen -->
+<div class="screen hidden" id="gameover-screen">
+  <div class="screen-title">FIM!</div>
+  <div class="go-score-row">Pontuação</div>
+  <div id="go-score-val">0</div>
+  <div id="go-hi-val"></div>
+  <button class="btn" id="restart-btn">JOGAR NOVAMENTE</button>
 </div>
 
-<!-- PAUSE -->
-<div class="overlay hidden" id="pause-screen">
-  <div class="pa-label">PAUSADO</div>
-  <button class="tap-btn" id="resume-btn">CONTINUAR</button>
+<!-- Pause Screen -->
+<div class="screen hidden" id="pause-screen">
+  <div class="screen-title">PAUSADO</div>
+  <div class="screen-sub" style="margin-bottom:36px">Respira fundo ✨</div>
+  <button class="btn" id="resume-btn">CONTINUAR</button>
 </div>
-
 <script src="src/js/script.js"></script>
+
 </body>
 </html>
